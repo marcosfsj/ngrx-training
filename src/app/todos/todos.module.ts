@@ -23,7 +23,7 @@ import { TodoListItemComponent } from './todo-list/todo-list-item/todo-list-item
     TodoListItemComponent
   ],
   imports: [CommonModule, StoreModule.forFeature('todos', todosReducer)],
-  providers: [TodosService],
+  providers: [],
   exports: [TodosComponent]
 })
 export class TodosModule {}

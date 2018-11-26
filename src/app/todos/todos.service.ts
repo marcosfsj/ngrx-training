@@ -1,5 +1,20 @@
-import { Injectable } from '@angular/core';
+/* Libraries */
+import { OnInit, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
+/* Store */
+import { State } from './store/todo.reducers';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class TodosService {
-  constructor() {}
+
+  constructor(private store: Store<State>) { }
+
+  getTodos() {
+    return this.store.select('todos');
+  }
+
 }

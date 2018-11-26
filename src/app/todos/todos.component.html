@@ -1,3 +1,22 @@
-<p>
-  todos works!
-</p>
+<div class="container">
+  <div class="row">
+
+    <table class="table table-sm table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Description</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos; let i = index">
+                <th scope="row">{{i}}</th>
+                <th>{{todo.description}}</th>
+                <td>{{todo.done}}</td>
+            </tr>
+        </tbody>
+    </table>  
+
+  </div>
+</div>

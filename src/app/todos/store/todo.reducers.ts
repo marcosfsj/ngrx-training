@@ -6,7 +6,12 @@ export interface State {
 }
 
 export const initialState: State = {
-  todos: [new Todo('Finish this project', false)]
+  todos: [
+    new Todo('Finish this project', false),
+    new Todo('Finish this project', false),
+    new Todo('Finish this project', false),
+    new Todo('Finish this project', false)
+  ]
 };
 
 export function todosReducer(state = initialState, action: Todos.TodosActions) {
