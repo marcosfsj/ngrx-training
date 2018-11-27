@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="card-group">
-      <div class="card mr-2 mt-2" style="width:10rem;">
+      <div class="card mr-2 mt-2" style="width:12rem;">
         <div class="card-body">
           <h4 class="card-title">Todo {{ index }}</h4>
           <p class="card-text">{{ todo.description }}</p>
-          <a class="btn btn-outline-primary" href="#">
-            <i class="fas fa-check"></i>
-          </a>
-          <a class="btn btn-outline-secondary" href="#">
-            <i class="fas fa-edit"></i>
-          </a>
-          <a class="btn btn-outline-danger" href="#">
-            <i class="fas fa-trash-alt"></i>
-          </a>
+          <button class="btn btn-primary mr-1" type="button">
+            <i class="fa fa-check"></i>
+          </button>
+          <button class="btn btn-secondary mr-1" type="button">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button class="btn btn-danger mr-1" type="button">
+            <i class="fa fa-trash"></i>
+          </button>
         </div>
       </div>
     </div>
