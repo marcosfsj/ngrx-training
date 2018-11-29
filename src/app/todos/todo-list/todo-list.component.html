@@ -1,74 +1,82 @@
 <div class="container">
   <div class="row">
     <app-todo-list-item
-      *ngFor="let todo of todos; let i = index"
+      *ngFor="let todo of (todosStore | async).todos; let i = index"
       [todo]="todo"
       [index]="i"
     >
-    </app-todo-list-item>  
+    </app-todo-list-item>
   </div>
 </div>
 <div class="container mt-2">
   <div class="row">
-      <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#addModal">Add new</button>
+    <button
+      type="button"
+      class="btn btn-dark btn-block"
+      data-toggle="modal"
+      data-target="#addModal"
+    >
+      Add new
+    </button>
   </div>
 </div>
 
 <!-- ADD MODAL -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-  <div class="modal-content">
-    <div class="modal-body m-0 p-0">
-      <header id="main-header">
-        <div class="row no-gutters">
-          <div class="col-5">
-            <img src="img/person1.jpg" alt="">
-          </div>
-          <div class="col-7">
-            <div class="container my-3 mx-3">
-              <div class="row">
-                <div>
-                  <p>Investiments Require Reflection</p>
+<div
+  class="modal fade"
+  id="addModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body m-0 p-0">
+        <header id="main-header">
+          <div class="row no-gutters">
+            <div class="col-5"><img src="img/person1.jpg" alt="" /></div>
+            <div class="col-7">
+              <div class="container my-3 mx-3">
+                <div class="row">
+                  <div><p>Investiments Require Reflection</p></div>
+                  <div class="justify-self-end"><p>X</p></div>
                 </div>
-                <div class="justify-self-end">
-                  <p>X</p>
+                <div class="row">
+                  <p>
+                    Let's keep in touch so we can send you more information.
+                  </p>
                 </div>
-              </div>
-              <div class="row">
-                <p>Let's keep in touch so we can send you more information.</p>
-              </div>
-              <div class="row">
-                <form>
-                  <div class="form-group">
-                    <label for="field1">Field 1</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="field1">Field 1</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="field1">Field 1</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="field1">Field 1</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="field1">Field 1</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <button class="btn btn-primary">Submit</button>
-                </form>
+                <div class="row">
+                  <form>
+                    <div class="form-group">
+                      <label for="field1">Field 1</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="field1">Field 1</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="field1">Field 1</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="field1">Field 1</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="field1">Field 1</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
     </div>
   </div>
 </div>
-</div>
-

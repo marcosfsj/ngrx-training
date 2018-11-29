@@ -1,8 +1,8 @@
 import { TodosService } from './../todos.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Todo } from './../store/todo.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,17 +10,16 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit, OnDestroy {
-  todos: Todo[];
+  todosStore: Observable<{ todos: Todo[] }>;
   todosSubscription: Subscription;
 
-  constructor(private todosService: TodosService) {}
+  constructor(
+    private todosService: TodosService,
+    private store: Store<{ todos: { todos: Todo[] } }>
+  ) {}
 
   ngOnInit() {
-    this.todosSubscription = this.todosService
-      .getTodos()
-      .subscribe(todosStore => {
-        this.todos = todosStore['todos'];
-      });
+    this.todosStore = this.store.select('todos');
   }
 
   ngOnDestroy() {
